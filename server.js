@@ -72,6 +72,14 @@ app.get('/bad', (req, res) => {
 
 });
 
+app.get('/projects', (req,res) => {
+
+	res.render('projects.hbs',{
+		pageTitle:'GitHub Projects',
+		info:'These are the projects currently being worked on.'
+	});
+});
+
 app.listen(port, () => {
 console.log(`server is up on port ${port}`);
 });
