@@ -1,6 +1,11 @@
+/*we predefine a start script in package.json so that heroku can run our file
+because it does not know the name of our file */
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+
+//'processs' stores all env variables as key value pairs
+const port = process.env.PORT || 3000;
 
 var app = express();
 
@@ -67,6 +72,6 @@ app.get('/bad', (req, res) => {
 
 });
 
-app.listen(3000, () => {
-console.log('server is up on port 3000');
+app.listen(port, () => {
+console.log(`server is up on port ${port}`);
 });
